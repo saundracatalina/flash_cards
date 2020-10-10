@@ -24,6 +24,8 @@ class DeckTest < Minitest::Test
 
   def test_can_read_category_of_cards_in_deck
     assert_equal [@card_2, @card_3], @deck.cards_in_category(:STEM)
+    assert_equal [@card_1], @deck.cards_in_category(:Geography)
+    assert_equal [], @deck.cards_in_category("Pop Culture")
+    binding.pry 
   end
-
 end
