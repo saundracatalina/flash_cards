@@ -12,9 +12,8 @@ class Turn
   def feedback
     if (card.answer == guess) == true
       return "Correct!"
-      # require 'pry'; binding.pry
-    # elsif card.answer != guess
-    #   "Incorrect."
+    elsif (card.answer == guess) == false
+      return "Incorrect."
     end
   end
 end
