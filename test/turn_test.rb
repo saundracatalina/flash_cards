@@ -15,6 +15,7 @@ class TurnTest < Minitest::Test
   def test_card_info
     card_1 = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     turn = Turn.new("Juneau", card_1)
+    assert_equal card_1, turn.card
     assert_equal "Juneau", turn.guess
     assert_equal true, turn.correct?
   end
