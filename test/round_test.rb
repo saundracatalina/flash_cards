@@ -4,7 +4,6 @@ require './lib/card'
 require './lib/turn'
 require './lib/deck'
 require './lib/round'
-require 'pry'
 
 class RoundTest < Minitest::Test
 
@@ -28,17 +27,16 @@ class RoundTest < Minitest::Test
     assert_equal @card_1, @round_1.current_card
   end
 
-  def test_take_new_turn_info
+  def test_new_turn_info
     new_turn = @round_1.take_turn("Juneau")
-    assert_equal new_turn, @round_1.current_turn
-    # binding.pry
+    assert_equal Turn, new_turn.class
+    assert_equal true, new_turn.correct?
+    assert_equal [new_turn], @round_1.turns
   end
 
-  # def test_class_of_new_turn_variable
-  #   assert_equal Turn, new_turn.class
-  # end
-
-  def test_if_new_turn_correct
+  def test_number_of_correct_guesses
+    new_turn = @round_1.take_turn("Juneau")
+    assert_equal 1, @round_1.number_correct
   end
 
 end
