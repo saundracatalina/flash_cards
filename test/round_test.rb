@@ -18,7 +18,10 @@ class RoundTest < Minitest::Test
 
   def test_deck_can_be_accessed
     assert_equal @deck, @round.deck
-    binding.pry 
+  end
+
+  def test_turns_starts_as_empty_array
+    assert_equal [], @round.turns 
   end
 
 end
