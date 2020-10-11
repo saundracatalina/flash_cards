@@ -11,9 +11,9 @@ class Turn
 
   def feedback
     if (card.answer == guess) == true
-      return "Correct!"
+      "Correct!"
     elsif (card.answer == guess) == false
-      return "Incorrect."
+      "Incorrect."
     end
   end
 end
